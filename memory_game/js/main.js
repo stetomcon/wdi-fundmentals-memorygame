@@ -1,38 +1,33 @@
-
-
-
-
-
 var cards = [
 {rank: "queen", suit: "hearts", cardImage: "images/queen-of-hearts.png"},
 {rank: "queen", suit: "diamonds", cardImage: "images/queen-of-diamonds.png"},
 {rank: "king", suit: "hearts", cardImage: "images/king-of-hearts.png"},
 {rank: "king", suit: "diamons", cardImage: "images/king-of-diamonds.png"},
 ];
-
+// prefer my var cards to be in this layout -sw
 var cardsInPlay = [];
 
-function checkForMatch() {
-	setAttribute(cards[cardId].cardImage) // I thin'k this part is wrong.
-if (cardsInPlay[0] === cardsInPlay[1]) {
-  console.log("You found a match!");
-} else {
-  console.log("Sorry, try again.");
-}	
-}
+ function checkForMatch() {
+ if (cardsInPlay[0] === cardsInPlay[1]) {
+alert("You found a match!");
+ } else {
+ alert("Sorry, try again");
+};
+
+}; // do I need this??? 
 
 
 function flipCard() {
-var carId = this.getAttribute('data-id');
-cardsInPlay.push(cards[cardid].rank);
+var cardId = this.getAttribute('data-id');
+cardsInPlay.push(cards[cardId].rank);
+ this.setAttribute('src', cards[cardId].cardImage);
 
-console.log("user flipped " + cards[cardId].rank);
-console.log("user flipped" + cards[cardId].cardImage);
-console.log("user flipped" + caeds[cardId].suit);
+ if (cardsInPlay.length === 2){
+    checkForMatch();
+ };
+};
 
-checkForMatch();
-}
-
+console.log(cardsInPlay);
 
 
  function createBoard() {
